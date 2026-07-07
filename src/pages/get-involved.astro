@@ -42,7 +42,7 @@ const ways = [
   <section class="section page-head">
     <div class="container">
       <span class="kicker">Get Involved</span>
-      <h1>Putting Sixth Form research centre stage</h1>
+      <h1>Putting Sixth Form research <span class="stage-line">centre stage</span></h1>
       <p class="lead">
         There&rsquo;s a place here whether you&rsquo;re a student just getting curious, a
         student with work to share, teacher or school/college leader looking for a platform
@@ -87,6 +87,9 @@ const ways = [
 
 <style>
   .page-head { padding-bottom: 0; }
+  @media (min-width: 861px) {
+    .stage-line { display: block; }
+  }
   .page-head .lead { max-width: 42rem; }
   .ways { padding-top: 2.5rem; }
   .card h3 { margin-bottom: 0.4rem; }
