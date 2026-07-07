@@ -29,8 +29,4 @@ https://sixthformresearchnetwork.co.uk.
 - Partner logos for the Partners section
 - Submission route for "Bring your research"
 - Contact form (optional fields drafted: Name, Email, School/college, Message); needs a form backend before adding
-
-## Commands
-
-- `npm run dev` — local dev server
-- `npm run build` — production build to `dist/`
+- Journal (`/journal/`) is a coming-soon placeholder. The journal will be published via ISSUU; a read
