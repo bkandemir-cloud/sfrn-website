@@ -1,0 +1,64 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { news, type NewsPost } from '../../data/news';
+import { marked } from 'marked';
+import sanitizeHtml from 'sanitize-html';
+
+export function getStaticPaths() {
+  return news.map((post) => ({ params: { slug: post.slug }, props: { post } }));
+}
+
+interface Props {
+  post: NewsPost;
+}
+
+const { post } = Astro.props;
+
+const html = sanitizeHtml(await marked.parse(post.content), {
+  allowedTags: sanitizeHtml.defaults.allowedTags.concat(['img']),
+  allowedAttributes: {
+    ...sanitizeHtml.defaults.allowedAttributes,
+    a: ['href', 'target', 'rel'],
+    img: ['src', 'alt', 'loading'],
+  },
+  transformTags: {
+    a: sanitizeHtml.simpleTransform('a', { rel: 'noopener' }),
+  },
+});
+
+const jsonLd = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'NewsArticle',
+  headline: post.title,
+  datePublished: post.date,
+  publisher: {
+    '@type': 'Organization',
+    name: 'Sixth Form Research Network',
+    url: 'https://sixthformresearchnetwork.co.uk',
+  },
+});
+---
+<BaseLayout title={`${post.title} | Sixth Form Research Network`} description={post.excerpt}>
+  <script type="application/ld+json" set:html={jsonLd} />
+  <article class="section">
+    <div class="container prose">
+      <p class="date">{post.displayDate}</p>
+      <h1>{post.title}</h1>
+      <div set:html={html} />
+      <p class="back"><a href="/news/">&larr; All news</a></p>
+    </div>
+  </article>
+</BaseLayout>
+
+<style>
+  .date {
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 0.6rem;
+  }
+  h1 { font-size: clamp(1.9rem, 4vw, 2.8rem); }
+  .back { margin-top: 2.5rem; }
+</style>

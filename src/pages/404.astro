@@ -1,0 +1,21 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout
+  title="Page not found | Sixth Form Research Network"
+  description="Sorry, we couldn't find that page."
+>
+  <section class="section notfound">
+    <div class="container">
+      <span class="kicker">404</span>
+      <h1>Page not found</h1>
+      <p class="lead">Sorry, we couldn&rsquo;t find that page. It may have moved.</p>
+      <a class="btn btn-primary" href="/">Back to the homepage</a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .notfound { min-height: 50vh; }
+  .btn { margin-top: 1rem; }
+</style>

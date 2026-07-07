@@ -1,0 +1,164 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const beliefs = [
+  'Sixth Form students are researchers, at every stage, from first curiosity to finished work.',
+  'Students are the researchers; teachers facilitate, guiding and supporting rather than leading.',
+  'Research is a bridge to university, and builds transferable skills that make you more adaptable in higher study and work.',
+  'Students from state and independent schools have a lot to gain from meeting as equals.',
+  'Sharing your work in a supportive but real setting is where a lot of the learning happens.',
+  'Sixth Form students deserve real publishing opportunities; the Network intends to launch a journal dedicated to Sixth Form student research.',
+  'Connecting beyond a single school makes everyone’s thinking richer.',
+  'The 16–19 phase needs its own body of research, built by the people who know it best.',
+];
+---
+<BaseLayout
+  title="About | Sixth Form Research Network"
+  description="The Sixth Form Research Network (SFRN) is a community for Sixth Form student researchers, supported by their teachers as facilitators, at whatever stage they're at."
+>
+  <section class="section page-head">
+    <div class="container">
+      <span class="kicker">About</span>
+      <h1>About the Network</h1>
+    </div>
+  </section>
+
+  <section class="section about-body">
+    <div class="container prose">
+      <p class="lead">
+        The Sixth Form Research Network (SFRN) is a community for Sixth Form student
+        researchers, supported by their teachers as facilitators, at whatever stage
+        they&rsquo;re at.
+      </p>
+      <p>
+        Some students have a finished project to share. Others have work in progress, a subject
+        that has sparked their curiosity, or an interest in research and no idea where to
+        start. Wherever you are, there&rsquo;s a place for you, and a role to play: presenting
+        your work, sharing a project in progress, or joining the audience to gather ideas for a
+        project you have only just begun.
+      </p>
+      <p>
+        Across schools and colleges, this kind of energy usually stays within a single
+        institution, and research about the 16&ndash;19 phase itself remains thin on the
+        ground. SFRN brings together Sixth Form student researchers from state and independent
+        schools, meeting on equal terms, with teachers alongside them as facilitators, and acts
+        as a bridge from the Sixth Form to university and beyond. It&rsquo;s a way of
+        networking past the walls of one common room, getting used to meeting new people and
+        pitching your ideas in a supportive environment, building skills that are transferable
+        and make you much more adaptable as you start university and enter the working world,
+        and enjoying research as something sociable and academically empowering.
+      </p>
+      <p>
+        Sharing happens in a setting that is supportive but real. Our webinars and face-to-face
+        meetings, including poster conferences, put students in front of a small, friendly
+        audience of students, teachers and researchers who ask robust but constructive
+        questions, closer to a university seminar or the workplace than a school classroom. It
+        is low-stakes, but it carries prestige of its own, and the reflection it prompts is
+        where a lot of the real learning happens.
+      </p>
+    </div>
+  </section>
+
+  <section class="section section-navy">
+    <div class="container">
+      <span class="kicker">Vision</span>
+      <h2>We believe that&hellip;</h2>
+      <ol class="card-grid">
+        {beliefs.map((b, i) => (
+          <li class="belief">
+            <span class="num">{i + 1}</span>
+            <p>{b}</p>
+          </li>
+        ))}
+      </ol>
+      <p class="vision-aim">
+        Our aim is to build an open, sociable and supportive community that helps this work
+        happen, and helps it reach the people who can learn from it.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <span class="kicker">Partners</span>
+      <h2>Founded in partnership</h2>
+      <p class="lead">
+        SFRN is a partnership founded by organisations that share a conviction that Sixth Form
+        research matters:
+      </p>
+      <ul class="partner-list">
+        <li>Sixth Form Colleges Association (SFCA)</li>
+        <li>Kingston Grammar School</li>
+        <li>The Huish Centre</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section section-band">
+    <div class="container cta-strip">
+      <h2>Ready to take part?</h2>
+      <a class="btn btn-primary" href="/get-involved/">Get involved</a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-head { padding-bottom: 0; }
+  .about-body { padding-top: 2rem; }
+  .prose { max-width: 48rem; }
+
+  .belief {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: var(--radius);
+    padding: 1.6rem;
+  }
+  .belief p { margin: 0; color: #e8e9f4; }
+  .belief .num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.4rem;
+    height: 2.4rem;
+    border-radius: 50%;
+    background: rgba(143, 198, 222, 0.16);
+    color: #8fc6de;
+    font-family: var(--font-serif);
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  .vision-aim {
+    margin-top: 2.5rem;
+    font-family: var(--font-serif);
+    font-size: clamp(1.15rem, 2vw, 1.4rem);
+    color: #ffffff;
+    max-width: 46rem;
+  }
+
+  .partner-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0 0;
+  }
+  .partner-list li {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 0.7rem 1.4rem;
+    font-weight: 600;
+    color: var(--navy);
+  }
+
+  .cta-strip {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+  }
+  .cta-strip h2 { margin: 0; }
+</style>

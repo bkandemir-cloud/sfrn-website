@@ -1,0 +1,74 @@
+---
+const year = new Date().getFullYear();
+---
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <img src="/images/sfrn-mark.png" alt="" width="52" height="52" />
+      <p class="tagline">Showcasing Sixth Form research: Developing versatile skills</p>
+    </div>
+    <nav aria-label="Footer navigation">
+      <ul>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/get-involved/">Get Involved</a></li>
+        <li><a href="/news/">News</a></li>
+        <li><a href="/contact/">Contact</a></li>
+        <li>
+          <a href="https://www.linkedin.com/company/sixthformresearchnetwork" target="_blank" rel="noopener">LinkedIn</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  <div class="container footer-base">
+    <p>&copy; {year} Sixth Form Research Network</p>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background: var(--navy);
+    color: #c3c6e0;
+    margin-top: 0;
+  }
+  .footer-inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2rem;
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+  }
+  .footer-brand { max-width: 22rem; }
+  .footer-brand img {
+    filter: brightness(0) invert(1);
+    opacity: 0.9;
+    margin-bottom: 0.8rem;
+  }
+  .tagline {
+    font-family: var(--font-serif);
+    font-size: 1.05rem;
+    color: #e8e9f4;
+    margin: 0;
+  }
+  nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.6rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  nav a {
+    color: #c3c6e0;
+    text-decoration: none;
+    font-size: 0.95rem;
+  }
+  nav a:hover { color: #ffffff; }
+  .footer-base {
+    border-top: 1px solid rgba(255, 255, 255, 0.14);
+    padding-top: 1.2rem;
+    padding-bottom: 1.6rem;
+  }
+  .footer-base p { font-size: 0.85rem; margin: 0; opacity: 0.75; }
+</style>

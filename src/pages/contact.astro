@@ -1,0 +1,54 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout
+  title="Contact | Sixth Form Research Network"
+  description="Get in touch with the Sixth Form Research Network. We'd love to hear from you."
+>
+  <section class="section page-head">
+    <div class="container">
+      <span class="kicker">Contact</span>
+      <h1>We&rsquo;d love to hear from you</h1>
+    </div>
+  </section>
+
+  <section class="section contact-body">
+    <div class="container card-grid contact-grid">
+      <div class="card">
+        <h3>Join the webinar</h3>
+        <p>
+          The quickest way to meet the Network: our introductory webinar on Wednesday
+          23 September 2026, 4.00&ndash;5.00pm.
+        </p>
+        <a class="btn btn-primary" href="https://forms.cloud.microsoft/e/HfXTmbGfTH" target="_blank" rel="noopener">
+          Register for the webinar
+        </a>
+      </div>
+      <div class="card">
+        <h3>Follow us on LinkedIn</h3>
+        <p>News, events and updates from the Network.</p>
+        <a
+          class="btn btn-secondary"
+          href="https://www.linkedin.com/company/sixthformresearchnetwork"
+          target="_blank"
+          rel="noopener"
+        >SFRN on LinkedIn</a>
+      </div>
+      <div class="card">
+        <h3>Schools and colleges</h3>
+        <p>
+          Interested in partnering, or bringing your students&rsquo; work into the community?
+          Reach out via LinkedIn while our enquiries inbox is being set up.
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-head { padding-bottom: 0; }
+  .contact-body { padding-top: 2.5rem; }
+  .contact-grid { margin-top: 0; }
+  .card h3 { margin-bottom: 0.5rem; }
+  .card p { color: var(--muted); }
+</style>

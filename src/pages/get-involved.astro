@@ -1,0 +1,102 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const ways = [
+  {
+    title: 'Come to the introductory webinar',
+    body: 'Wednesday 23 September 2026, 4.00–5.00pm, online.',
+    link: { href: 'https://forms.cloud.microsoft/e/HfXTmbGfTH', label: 'Sign up here', external: true },
+  },
+  {
+    title: 'Bring your research, at any stage',
+    body: 'Finished, in progress, or just an idea, we’d love to hear about it.',
+  },
+  {
+    title: 'Come as an audience',
+    body: 'Not ready to present? Join a meeting to gather ideas and inspiration for your own project.',
+  },
+  {
+    title: 'Get published',
+    body: 'The Network is creating publishing opportunities for Sixth Form students, including a planned journal dedicated to Sixth Form research.',
+  },
+  {
+    title: 'For teachers',
+    body: 'Facilitate: encourage your students and bring their work into the community.',
+  },
+  {
+    title: 'Connect beyond your school',
+    body: 'Meet student researchers from other schools, and build transferable skills.',
+  },
+  {
+    title: 'Follow along',
+    body: 'Find us on LinkedIn and keep an eye on our News page for updates.',
+    link: { href: 'https://www.linkedin.com/company/sixthformresearchnetwork', label: 'SFRN on LinkedIn', external: true },
+  },
+];
+---
+<BaseLayout
+  title="Get Involved | Sixth Form Research Network"
+  description="There's a place here whether you're a student just getting curious, a student with work to share, a teacher, or a whole department."
+>
+  <section class="section page-head">
+    <div class="container">
+      <span class="kicker">Get Involved</span>
+      <h1>There&rsquo;s a place for you</h1>
+      <p class="lead">
+        There&rsquo;s a place here whether you&rsquo;re a student just getting curious, a
+        student with work to share, a teacher, or a whole department.
+      </p>
+    </div>
+  </section>
+
+  <section class="section ways">
+    <div class="container">
+      <ul class="card-grid">
+        {ways.map((w, i) => (
+          <li class="card">
+            <span class="num">{i + 1}</span>
+            <h3>{w.title}</h3>
+            <p>{w.body}</p>
+            {w.link && (
+              <a
+                href={w.link.href}
+                target={w.link.external ? '_blank' : undefined}
+                rel={w.link.external ? 'noopener' : undefined}
+              >{w.link.label} &rarr;</a>
+            )}
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <section class="section section-navy">
+    <div class="container cta-strip">
+      <div>
+        <h2>Introductory webinar</h2>
+        <p class="lead">Wednesday 23 September 2026, 4.00&ndash;5.00pm, online.</p>
+      </div>
+      <a class="btn btn-primary" href="https://forms.cloud.microsoft/e/HfXTmbGfTH" target="_blank" rel="noopener">
+        Register for the webinar
+      </a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-head { padding-bottom: 0; }
+  .page-head .lead { max-width: 42rem; }
+  .ways { padding-top: 2.5rem; }
+  .card h3 { margin-bottom: 0.4rem; }
+  .card p { margin-bottom: 0.6rem; color: var(--muted); }
+
+  .cta-strip {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+  }
+  .cta-strip h2 { margin-bottom: 0.3rem; }
+  .cta-strip p { margin: 0; }
+</style>

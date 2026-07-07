@@ -1,0 +1,236 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { news } from '../data/news';
+
+const latest = news[0];
+const beliefs = [
+  'Sixth Form students are researchers, at every stage, from first curiosity to finished work.',
+  'Students are the researchers; teachers facilitate, guiding and supporting rather than leading.',
+  'Research is a bridge to university, and builds transferable skills that make you more adaptable in higher study and work.',
+  'Students from state and independent schools have a lot to gain from meeting as equals.',
+  'Sharing your work in a supportive but real setting is where a lot of the learning happens.',
+  'Sixth Form students deserve real publishing opportunities; the Network intends to launch a journal dedicated to Sixth Form student research.',
+  'Connecting beyond a single school makes everyone’s thinking richer.',
+  'The 16–19 phase needs its own body of research, built by the people who know it best.',
+];
+---
+<BaseLayout
+  title="Sixth Form Research Network | Sixth Form research, shared."
+  description="A community for Sixth Form student researchers at every stage, supported by teachers as facilitators, and a bridge from the Sixth Form to university and beyond."
+>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-text">
+        <span class="kicker">Showcasing Sixth Form research: Developing versatile skills</span>
+        <h1>Sixth Form research,<br /><em>shared.</em></h1>
+        <p class="lead">
+          A community for Sixth Form student researchers at every stage, supported by teachers
+          as facilitators, and a bridge from the Sixth Form to university and beyond.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="https://forms.cloud.microsoft/e/HfXTmbGfTH" target="_blank" rel="noopener">
+            Join the introductory webinar, 23 September
+          </a>
+          <a class="btn btn-secondary" href="/about/">Find out more</a>
+        </div>
+      </div>
+      <div class="hero-mark" aria-hidden="true">
+        <img src="/images/sfrn-mark.png" alt="" width="380" height="380" loading="eager" />
+      </div>
+    </div>
+  </section>
+
+  <!-- About preview -->
+  <section class="section">
+    <div class="container about-grid">
+      <div>
+        <span class="kicker">About the Network</span>
+        <h2>A place for every stage of research</h2>
+      </div>
+      <div>
+        <p>
+          The Sixth Form Research Network (SFRN) is a community for Sixth Form student
+          researchers, supported by their teachers as facilitators, at whatever stage
+          they&rsquo;re at.
+        </p>
+        <p>
+          Some students have a finished project to share. Others have work in progress, a
+          subject that has sparked their curiosity, or an interest in research and no idea
+          where to start. Wherever you are, there&rsquo;s a place for you, and a role to play:
+          presenting your work, sharing a project in progress, or joining the audience to
+          gather ideas for a project you have only just begun.
+        </p>
+        <a class="btn btn-secondary" href="/about/">More about SFRN</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Vision -->
+  <section class="section section-navy">
+    <div class="container">
+      <span class="kicker">Our vision</span>
+      <h2>We believe that&hellip;</h2>
+      <ol class="card-grid beliefs">
+        {beliefs.map((b, i) => (
+          <li class="belief">
+            <span class="num">{i + 1}</span>
+            <p>{b}</p>
+          </li>
+        ))}
+      </ol>
+      <p class="vision-aim">
+        Our aim is to build an open, sociable and supportive community that helps this work
+        happen, and helps it reach the people who can learn from it.
+      </p>
+    </div>
+  </section>
+
+  <!-- Partners -->
+  <section class="section">
+    <div class="container partners">
+      <span class="kicker">Partners</span>
+      <h2>Founded in partnership</h2>
+      <p class="lead">
+        SFRN is a partnership founded by organisations that share a conviction that Sixth Form
+        research matters:
+      </p>
+      <ul class="partner-list">
+        <li>Sixth Form Colleges Association (SFCA)</li>
+        <li>Kingston Grammar School</li>
+        <li>The Huish Centre</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Latest news + CTA -->
+  <section class="section section-band">
+    <div class="container news-cta">
+      <div class="news-teaser">
+        <span class="kicker">Latest news</span>
+        <h2>
+          <a href={`/news/${latest.slug}/`}>{latest.title}</a>
+        </h2>
+        <p>{latest.excerpt}</p>
+        <a href="/news/">All news &rarr;</a>
+      </div>
+      <div class="cta-panel">
+        <h3>Introductory webinar</h3>
+        <p>
+          Wednesday 23 September 2026<br />4.00&ndash;5.00pm, online
+        </p>
+        <a class="btn btn-primary" href="https://forms.cloud.microsoft/e/HfXTmbGfTH" target="_blank" rel="noopener">
+          Register for the webinar
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .hero {
+    padding: clamp(3.5rem, 9vw, 7rem) 0;
+    background:
+      radial-gradient(ellipse 60% 70% at 85% 20%, var(--teal-tint) 0%, transparent 70%),
+      var(--bg);
+    overflow: hidden;
+  }
+  .hero-inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+    align-items: center;
+    gap: 3rem;
+  }
+  .hero h1 em {
+    font-style: italic;
+    color: var(--teal);
+  }
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+  .hero-mark {
+    display: flex;
+    justify-content: center;
+  }
+  .hero-mark img {
+    animation: spin-in 1.4s var(--ease) both;
+  }
+  @keyframes spin-in {
+    from { transform: rotate(-24deg) scale(0.85); opacity: 0; }
+    to { transform: rotate(0) scale(1); opacity: 1; }
+  }
+  @media (max-width: 860px) {
+    .hero-inner { grid-template-columns: 1fr; }
+    .hero-mark img { width: 200px; height: 200px; }
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr);
+    gap: 3rem;
+  }
+  @media (max-width: 860px) {
+    .about-grid { grid-template-columns: 1fr; gap: 1rem; }
+  }
+
+  .beliefs { counter-reset: none; }
+  .belief {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: var(--radius);
+    padding: 1.6rem;
+  }
+  .belief p { margin: 0; color: #e8e9f4; }
+  .belief .num {
+    background: rgba(143, 198, 222, 0.16);
+    color: #8fc6de;
+  }
+  .vision-aim {
+    margin-top: 2.5rem;
+    font-family: var(--font-serif);
+    font-size: clamp(1.15rem, 2vw, 1.4rem);
+    color: #ffffff;
+    max-width: 46rem;
+  }
+
+  .partner-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0 0;
+  }
+  .partner-list li {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 0.7rem 1.4rem;
+    font-weight: 600;
+    color: var(--navy);
+  }
+
+  .news-cta {
+    display: grid;
+    grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+    gap: 2.5rem;
+    align-items: start;
+  }
+  .news-teaser h2 { font-size: clamp(1.4rem, 2.6vw, 1.9rem); }
+  .news-teaser h2 a { color: var(--navy); text-decoration: none; }
+  .news-teaser h2 a:hover { color: var(--teal); }
+  .cta-panel {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 2rem;
+    text-align: center;
+  }
+  .cta-panel p { color: var(--muted); }
+  @media (max-width: 860px) {
+    .news-cta { grid-template-columns: 1fr; }
+  }
+</style>
