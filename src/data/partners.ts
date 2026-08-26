@@ -44,9 +44,8 @@ export const partners: Partner[] = [
     height: 208,
   },
   {
-    name: 'The Huish Centre',
+    name: 'Richard Huish College',
     logo: '/images/partners/richard-huish-college.png',
-    alt: 'Richard Huish College',
     width: 216,
     height: 320,
   },

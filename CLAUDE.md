@@ -27,8 +27,8 @@ https://sixthformresearchnetwork.co.uk.
 ## Still to confirm (from the draft copy)
 
 - General enquiries email (draft suggests hello@sixthformresearchnetwork.co.uk); Contact page currently points to LinkedIn instead
-- Capital City College artwork: the supplied file is the coloured mark only, 195px wide, with no wordmark. The card pairs it with the name set in Fraunces. Ask them for the full lockup as an SVG, or a PNG 600px or wider
-- The Huish Centre card uses the Richard Huish College portrait lockup, the only artwork supplied. Confirm with Beth whether the partner should be named as the College or the Centre, and whether they have a horizontal lockup
+- Capital City College artwork: the supplied file is the coloured mark only, 195px wide, with no wordmark. The card pairs it with the name set in Fraunces, which Beth has confirmed is acceptable. A request for the full lockup (SVG, or PNG 600px or wider) is drafted in `CAS Builder Files/Sixth Form Research Network/`, unsent, and needs a recipient at the college
+- Richard Huish College: named as the College, confirmed by Beth, so the entry matches the wording inside the artwork. Her other SFRN documents write this partner as "the Huish Centre (Richard Huish College, Taunton)", so the card may want to follow that formulation later. The artwork is the portrait "name below" lockup; a horizontal one has not been asked for
 - Submission route for "Bring your research"
 - Contact form (optional fields drafted: Name, Email, School/college, Message); needs a form backend before adding
 - Journal (`/journal/`) is a coming-soon placeholder. The journal will be published via ISSUU; a ready-to-use responsive iframe embed snippet is in a comment in `src/pages/journal.astro`. Swap it in when the first issue is live.
