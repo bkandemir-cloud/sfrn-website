@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import PartnerGrid from '../components/PartnerGrid.astro';
 
 const beliefs = [
   'Sixth Form students are researchers, at every stage, from first curiosity to finished work.',
@@ -85,11 +86,7 @@ const beliefs = [
         SFRN is a partnership founded by organisations that share a conviction that Sixth Form
         research matters:
       </p>
-      <ul class="partner-list">
-        <li>Sixth Form Colleges Association (SFCA)</li>
-        <li>Kingston Grammar School</li>
-        <li>The Huish Centre</li>
-      </ul>
+      <PartnerGrid />
     </div>
   </section>
 
@@ -133,23 +130,6 @@ const beliefs = [
     font-size: clamp(1.15rem, 2vw, 1.4rem);
     color: #ffffff;
     max-width: 46rem;
-  }
-
-  .partner-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    list-style: none;
-    padding: 0;
-    margin: 1.5rem 0 0;
-  }
-  .partner-list li {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 999px;
-    padding: 0.7rem 1.4rem;
-    font-weight: 600;
-    color: var(--navy);
   }
 
   .cta-strip {
