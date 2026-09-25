@@ -79,14 +79,6 @@ const faqs = [
           About the journal
         </a>
       </div>
-      <!--
-        Hero image supplied by Beth (KAN-517): neon illustration of a self-seeded oak
-        sapling in a gap in a mature forest, following Sabine Little's "planting a
-        tree" metaphor from the introductory webinar. Replaces the earlier pencil
-        drawing, the Wikimedia photo and the pink neon version (all kept in docs/retired-images/). PLEASE VET:
-        the alt text is drafted by the coordinator agent; add a credit line here if
-        the artwork needs one.
-      -->
       <figure class="hero-photo">
         <img
           src="/images/call-for-papers-sapling-neon-blue.jpg"
@@ -101,7 +93,6 @@ const faqs = [
 
   <section class="section">
     <div class="container">
-      <!-- Two columns on this page so the eight questions sit in even pairs (KAN-510). -->
       <ul class="card-grid faq-grid">
         {faqs.map((item) => (
           <li class:list={['card', { 'card-explainer': item.explainer === true, 'card-explainer-grey': item.explainer === 'grey' }]}>
@@ -118,7 +109,6 @@ const faqs = [
       <div>
         <h2>Ready to submit?</h2>
       </div>
-      <!-- BETH TO VET: button label drafted by the coordinator agent (KAN-517). -->
       <a class="btn btn-primary" href="https://forms.cloud.microsoft/e/iMUDyE6BE3" target="_blank" rel="noopener">
         Submit your work
       </a>
