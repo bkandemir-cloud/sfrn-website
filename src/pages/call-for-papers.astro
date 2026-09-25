@@ -4,44 +4,57 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 const faqs = [
   {
     q: 'Who can submit?',
-    a: 'Any current Sixth Form student (Year 12 or Year 13), at any UK state or independent school or college, whether or not your school is already part of the Network.',
+    a: [
+      'Any current Sixth Form student (Year 12 or Year 13), at any UK state or independent school or college, whether or not your school is already part of the Network.',
+      // Teacher/supervisor contact requirement from Beth (KAN-510). Phrasing by the
+      // coordinator agent: BETH TO VET.
+      'We do ask that you have a teacher or supervisor at your school or college who is aware that you are making the submission and who is happy to be contacted. Please supply an email address for this person when you submit.',
+    ],
   },
   {
+    // Opening paragraph supplied by Beth (KAN-510). Length line reworded by the
+    // coordinator agent to carry her bracketed labels: BETH TO VET.
     q: 'What can I submit?',
-    a: 'Two tracks, so a project doesn’t have to be finished to be worth sharing: finished pieces, roughly 1,500–4,000 words, and work-in-progress pieces, roughly 500–1,500 words plus a short reflective note on your findings so far and where you’re heading next.',
+    a: [
+      'We publish articles: short, sharpened versions of a longer piece of research you have already carried out, such as an EPQ, Extended Essay or an independent project of your own. Your article should answer a specific research question or address a set title, so that a reader can see at once what you set out to find and what you concluded. Think of it as your original project refined and clipped to its essentials: the inquiry, the evidence and the argument.',
+      'Articles should be roughly 1,500–4,000 words (completed project) or roughly 500–1,500 words (work in progress).',
+    ],
   },
   {
+    // Two-track and reflective-note wording moved here from "What can I submit?"
+    // (KAN-510). Linking words by the coordinator agent: BETH TO VET.
     q: 'Does my project have to be finished?',
-    a: 'No. Work in progress is warmly welcomed here, not treated as a lesser version of a finished article.',
+    a: [
+      'No. There are two tracks, so a project doesn’t have to be finished to be worth sharing. Work in progress is warmly welcomed here, not treated as a lesser version of a finished article.',
+      'If you are submitting work in progress, please include a short reflective note on your findings so far and where you’re heading next.',
+    ],
   },
   {
     q: 'What citation style should I use?',
     a: 'We prefer APA-style in-text references and a reference list, but will also consider work formatted consistently in another major convention (Harvard, MLA or Chicago). Submissions with incomplete citations cannot be considered.',
   },
   {
-    q: 'Who reviews submissions?',
-    a: 'Submissions are read by a growing editorial board of researchers and educators from across the Network.',
+    // Moved up from the end of the list so the review questions sit together (KAN-510).
+    q: 'When does the Journal launch?',
+    a: 'We’re aiming for our first articles to be published in Summer 2027. The journal will be free to read online. We will be taking rolling submissions from the 25th of September 2026. There may however be future calls for papers for special sections which are based around particular themes or subject-specific.',
   },
   {
-    q: 'When will I hear back?',
-    a: 'We aim to respond to all those sharing submissions within 3 months.',
+    // "Who reviews submissions?" and "When will I hear back?" combined (KAN-510).
+    q: 'Who reviews submissions, and when will I hear back?',
+    a: 'Submissions are read by a growing editorial board of researchers and educators from across the Network. We aim to respond to all those sharing submissions within 3 months.',
   },
   {
     q: 'What feedback will I receive?',
     a: 'Your submission will be traffic-lighted with suggestions about how you might edit or evolve your piece of writing in order for it to be published in the journal.',
-    // Blue to pair visually with the explainer box that follows (KAN-510).
+    // Blue feedback box; the explainer that follows is grey (KAN-510).
     explainer: true,
   },
   {
-    // Explainer box for the previous question, shown in blue (KAN-517).
+    // Explainer box for the previous question, shown in grey at Beth's request (KAN-510).
     // Heading wording supplied by Beth (KAN-517).
     q: 'What do the traffic light feedback tiers mean?',
     a: '‘Green’ would be very unusual and would mean that it could be published with no corrections. ‘Amber’ would give some suggestions of editing and development required for it to be ready for publication. ‘Red’ would suggest substantial changes are needed to be made in order for your piece to be published.',
-    explainer: true,
-  },
-  {
-    q: 'When does the Journal launch?',
-    a: 'We’re aiming for our first articles to be published in Summer 2027. The journal will be free to read online. We will be taking rolling submissions from the 25th of September 2026. There may however be future calls for papers for special sections which are based around particular themes or subject-specific.',
+    explainer: 'grey',
   },
 ];
 ---
@@ -88,11 +101,12 @@ const faqs = [
 
   <section class="section">
     <div class="container">
-      <ul class="card-grid">
+      <!-- Two columns on this page so the eight questions sit in even pairs (KAN-510). -->
+      <ul class="card-grid faq-grid">
         {faqs.map((item) => (
-          <li class:list={['card', { 'card-explainer': item.explainer }]}>
+          <li class:list={['card', { 'card-explainer': item.explainer === true, 'card-explainer-grey': item.explainer === 'grey' }]}>
             <h3>{item.q}</h3>
-            <p>{item.a}</p>
+            {(Array.isArray(item.a) ? item.a : [item.a]).map((para) => <p>{para}</p>)}
           </li>
         ))}
       </ul>
@@ -104,6 +118,7 @@ const faqs = [
       <div>
         <h2>Ready to submit?</h2>
       </div>
+      <!-- BETH TO VET: button label drafted by the coordinator agent (KAN-517). -->
       <a class="btn btn-primary" href="https://forms.cloud.microsoft/e/iMUDyE6BE3" target="_blank" rel="noopener">
         Submit your work
       </a>
@@ -121,13 +136,23 @@ const faqs = [
     margin-top: 1.6rem;
   }
   .card h3 { margin-bottom: 0.4rem; }
+  .faq-grid {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr));
+  }
   .card p { margin-bottom: 0; color: var(--muted); }
+  .card p + p { margin-top: 0.8rem; }
   .card-explainer {
     background: var(--teal-tint);
     border-color: var(--teal);
   }
   .card-explainer h3 { color: var(--teal-dark); }
   .card-explainer p { color: var(--text); }
+  .card-explainer-grey {
+    background: #eeeef1;
+    border-color: #b9bac6;
+  }
+  .card-explainer-grey h3 { color: var(--navy-soft); }
+  .card-explainer-grey p { color: var(--text); }
 
   .hero-photo {
     margin: 2rem 0 0;
