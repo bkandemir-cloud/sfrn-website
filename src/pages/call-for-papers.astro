@@ -46,8 +46,8 @@ const faqs = [
   {
     q: 'What feedback will I receive?',
     a: 'Your submission will be traffic-lighted with suggestions about how you might edit or evolve your piece of writing in order for it to be published in the journal.',
-    // Blue feedback box; the explainer that follows is grey (KAN-510).
-    explainer: true,
+    // Grey box, matching the traffic light explainer that follows, at Beth's request (KAN-510).
+    explainer: 'grey',
   },
   {
     // Explainer box for the previous question, shown in grey at Beth's request (KAN-510).
@@ -95,7 +95,7 @@ const faqs = [
     <div class="container">
       <ul class="card-grid faq-grid">
         {faqs.map((item) => (
-          <li class:list={['card', { 'card-explainer': item.explainer === true, 'card-explainer-grey': item.explainer === 'grey' }]}>
+          <li class:list={['card', { 'card-explainer-grey': item.explainer === 'grey' }]}>
             <h3>{item.q}</h3>
             {(Array.isArray(item.a) ? item.a : [item.a]).map((para) => <p>{para}</p>)}
           </li>
@@ -131,12 +131,6 @@ const faqs = [
   }
   .card p { margin-bottom: 0; color: var(--muted); }
   .card p + p { margin-top: 0.8rem; }
-  .card-explainer {
-    background: var(--teal-tint);
-    border-color: var(--teal);
-  }
-  .card-explainer h3 { color: var(--teal-dark); }
-  .card-explainer p { color: var(--text); }
   .card-explainer-grey {
     background: #eeeef1;
     border-color: #b9bac6;
