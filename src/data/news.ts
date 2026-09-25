@@ -9,6 +9,17 @@ export interface NewsPost {
 
 export const news: NewsPost[] = [
   {
+    slug: 'our-first-webinar',
+    title: 'Our first webinar',
+    date: '2026-09-25',
+    displayDate: '25 September 2026',
+    excerpt:
+      'Our first webinar took place on Wednesday 23rd September 2026. Details of the next webinar, coming up early in 2027, will be available soon.',
+    content: `Our first webinar took place on Wednesday 23rd September 2026. Details of the next webinar, coming up early in 2027, will be available soon.
+
+Follow us on [LinkedIn](https://www.linkedin.com/company/sixthformresearchnetwork) for news of the next webinar and other opportunities to get involved.`,
+  },
+  {
     slug: 'introducing-the-sixth-form-research-network',
     title: 'Introducing the Sixth Form Research Network, join our launch webinar',
     date: '2026-07-07',
@@ -19,6 +30,6 @@ export const news: NewsPost[] = [
 
 The session includes a conversation with Professor Sabine Little on sharing and publishing work as an under-18 researcher. Professor Little is Professor of Literacy and Multilingualism at the University of Sheffield, and has published more than 50 papers, book chapters and reports, including with young people as co-authors.
 
-[Register to join us](https://forms.cloud.microsoft/e/HfXTmbGfTH).`,
+*Update: this webinar took place on Wednesday 23rd September 2026. Details of the next webinar, coming up early in 2027, will be available soon.*`,
   },
 ];

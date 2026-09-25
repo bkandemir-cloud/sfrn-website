@@ -1,0 +1,158 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const faqs = [
+  {
+    q: 'Who can submit?',
+    a: 'Any current Sixth Form student (Year 12 or Year 13), at any UK state or independent school or college, whether or not your school is already part of the Network.',
+  },
+  {
+    q: 'What can I submit?',
+    a: 'Two tracks, so a project doesn’t have to be finished to be worth sharing: finished pieces, roughly 1,500–4,000 words, and work-in-progress pieces, roughly 500–1,500 words plus a short reflective note on your findings so far and where you’re heading next.',
+  },
+  {
+    q: 'Does my project have to be finished?',
+    a: 'No. Work in progress is warmly welcomed here, not treated as a lesser version of a finished article.',
+  },
+  {
+    q: 'What citation style should I use?',
+    a: 'We prefer APA-style in-text references and a reference list, but will also consider work formatted consistently in another major convention (Harvard, MLA or Chicago). Submissions with incomplete citations cannot be considered.',
+  },
+  {
+    q: 'Who reviews submissions?',
+    a: 'Submissions are read by a growing editorial board of researchers and educators from across the Network.',
+  },
+  {
+    q: 'When will I hear back?',
+    a: 'We aim to respond to all those sharing submissions within 3 months.',
+  },
+  {
+    q: 'What feedback will I receive?',
+    a: 'Your submission will be traffic-lighted with suggestions about how you might edit or evolve your piece of writing in order for it to be published in the journal.',
+    // Blue to pair visually with the explainer box that follows (KAN-510).
+    explainer: true,
+  },
+  {
+    // Explainer box for the previous question, shown in blue (KAN-517).
+    // Heading wording supplied by Beth (KAN-517).
+    q: 'What do the traffic light feedback tiers mean?',
+    a: '‘Green’ would be very unusual and would mean that it could be published with no corrections. ‘Amber’ would give some suggestions of editing and development required for it to be ready for publication. ‘Red’ would suggest substantial changes are needed to be made in order for your piece to be published.',
+    explainer: true,
+  },
+  {
+    q: 'When does the Journal launch?',
+    a: 'We’re aiming for our first articles to be published in Summer 2027. The journal will be free to read online. We will be taking rolling submissions from the 25th of September 2026. There may however be future calls for papers for special sections which are based around particular themes or subject-specific.',
+  },
+];
+---
+<BaseLayout
+  title="Call for Papers | Sixth Form Research Network"
+  description="The Sixth Form Research Network is inviting submissions for the first issue of our journal, planned for Summer 2027. Finished pieces and work in progress both welcome."
+>
+  <section class="section page-head">
+    <div class="container">
+      <span class="kicker">Call for Papers</span>
+      <h1>The first issue of the SFRN Journal</h1>
+      <p class="lead">
+        We&rsquo;re now inviting submissions for our first issue, planned for Summer 2027.
+        Whether you have a finished project or something still taking shape, there&rsquo;s a
+        place for your work here.
+      </p>
+      <div class="actions">
+        <a class="btn btn-primary" href="#submit">
+          How to submit
+        </a>
+        <a class="btn btn-secondary" href="/journal/">
+          About the journal
+        </a>
+      </div>
+      <!--
+        Hero image supplied by Beth (KAN-517): neon illustration of a self-seeded oak
+        sapling in a gap in a mature forest, following Sabine Little's "planting a
+        tree" metaphor from the introductory webinar. Replaces the earlier pencil
+        drawing, the Wikimedia photo and the pink neon version (all kept in docs/retired-images/). PLEASE VET:
+        the alt text is drafted by the coordinator agent; add a credit line here if
+        the artwork needs one.
+      -->
+      <figure class="hero-photo">
+        <img
+          src="/images/call-for-papers-sapling-neon-blue.jpg"
+          alt="Neon illustration in glowing blue of a small oak sapling, its roots spreading through the soil, growing in a clearing between tall mature trees"
+          width="1024"
+          height="1024"
+          loading="eager"
+        />
+      </figure>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <ul class="card-grid">
+        {faqs.map((item) => (
+          <li class:list={['card', { 'card-explainer': item.explainer }]}>
+            <h3>{item.q}</h3>
+            <p>{item.a}</p>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <section class="section section-navy" id="submit">
+    <div class="container cta-strip">
+      <div>
+        <h2>Ready to submit?</h2>
+      </div>
+      <!-- BETH TO VET: button label drafted by the coordinator agent (KAN-517). -->
+      <a class="btn btn-primary" href="https://forms.cloud.microsoft/e/iMUDyE6BE3" target="_blank" rel="noopener">
+        Submit your work
+      </a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-head { padding-bottom: 0; }
+  .page-head .lead { max-width: 44rem; }
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1.6rem;
+  }
+  .card h3 { margin-bottom: 0.4rem; }
+  .card p { margin-bottom: 0; color: var(--muted); }
+  .card-explainer {
+    background: var(--teal-tint);
+    border-color: var(--teal);
+  }
+  .card-explainer h3 { color: var(--teal-dark); }
+  .card-explainer p { color: var(--text); }
+
+  .hero-photo {
+    margin: 2rem 0 0;
+  }
+  .hero-photo img {
+    width: 100%;
+    max-width: 32rem;
+    height: auto;
+    border-radius: var(--radius);
+    display: block;
+  }
+  .hero-photo figcaption {
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--muted);
+  }
+
+  .cta-strip {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+  }
+  .cta-strip h2 { margin-bottom: 0.3rem; }
+  .cta-strip p { margin: 0; }
+</style>
