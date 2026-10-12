@@ -48,7 +48,7 @@ The Sixth Form Research Network is a partnership co-founded by Sixth Form Colleg
 
 Our [call for papers](/call-for-papers/) for the Sixth Form Research Network Journal is open.
 
-Details of the next webinar, coming up early in 2027, will be available soon.
+Our first webinar took place on Wednesday 23rd September 2026. Details of the next webinar, coming up early in 2027, will be available soon.
 
 Follow us on [LinkedIn](https://www.linkedin.com/company/sixthformresearchnetwork) for news of the next webinar and other opportunities to get involved.`,
   },
