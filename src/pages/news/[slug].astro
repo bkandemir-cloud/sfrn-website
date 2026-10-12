@@ -44,30 +44,6 @@ const jsonLd = JSON.stringify({
     <div class="container prose">
       <p class="date">{post.displayDate}</p>
       <h1>{post.title}</h1>
-      {post.video && (
-        <figure class="clip">
-          <p class="clip-quote">{post.video.pullQuote}</p>
-          <video
-            controls
-            preload="none"
-            playsinline
-            poster={post.video.poster}
-            width={post.video.width}
-            height={post.video.height}
-          >
-            <source src={post.video.src} type="video/mp4" />
-            <p>
-              Your browser cannot play this video.
-              <a href={post.video.src}>Download the clip</a> instead, or read the transcript below.
-            </p>
-          </video>
-          <figcaption>{post.video.caption}</figcaption>
-          <details class="transcript">
-            <summary>Read the transcript</summary>
-            <p>{post.video.transcript}</p>
-          </details>
-        </figure>
-      )}
       <div set:html={html} />
       <p class="back"><a href="/news/">&larr; All news</a></p>
     </div>
@@ -85,43 +61,4 @@ const jsonLd = JSON.stringify({
   }
   h1 { font-size: clamp(1.9rem, 4vw, 2.8rem); }
   .back { margin-top: 2.5rem; }
-
-  .clip {
-    margin: 0 0 2rem;
-  }
-  .clip-quote {
-    font-family: var(--font-serif);
-    font-size: clamp(1.2rem, 2.4vw, 1.6rem);
-    line-height: 1.3;
-    color: var(--navy);
-    margin: 0 0 1rem;
-  }
-  .clip video {
-    display: block;
-    width: 100%;
-    height: auto;
-    background: var(--navy);
-    border-radius: var(--radius);
-  }
-  .clip figcaption {
-    margin-top: 0.75rem;
-    font-size: 0.95rem;
-    color: var(--muted);
-  }
-  .transcript {
-    margin-top: 1rem;
-    border-top: 1px solid var(--border);
-    padding-top: 0.75rem;
-  }
-  .transcript summary {
-    cursor: pointer;
-    font-size: 0.95rem;
-    font-weight: 600;
-    color: var(--teal);
-  }
-  .transcript p {
-    margin: 0.9rem 0 0;
-    font-size: 0.98rem;
-    color: var(--muted);
-  }
 </style>
