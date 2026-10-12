@@ -9,13 +9,21 @@ export interface NewsPost {
 
 export const news: NewsPost[] = [
   {
-    slug: 'our-first-webinar',
-    title: 'Our first webinar',
+    slug: 'introductory-webinar-with-professor-sabine-little',
+    title: 'Our introductory webinar with Professor Sabine Little',
     date: '2026-09-25',
     displayDate: '25 September 2026',
     excerpt:
-      'Our first webinar took place on Wednesday 23rd September 2026. Details of the next webinar, coming up early in 2027, will be available soon.',
-    content: `Our first webinar took place on Wednesday 23rd September 2026. Details of the next webinar, coming up early in 2027, will be available soon.
+      'On Wednesday 23rd September 2026 we welcomed students, teachers and researchers from across the country to the Sixth Form Research Network’s introductory webinar. Professor Sabine Little joined us to talk about what it takes to develop as a young researcher.',
+    content: `On Wednesday 23rd September 2026, we welcomed students, teachers and researchers from across the country to the Sixth Form Research Network’s introductory webinar. Professor Sabine Little, Professor of Literacy and Multilingualism at the University of Sheffield, joined us to talk about what it takes to develop as a young researcher: the ethics of research, why not all research experience is good experience and what publishing realistically looks like for a Sixth Form student today.
+
+Huge thanks to Sabine Little for such a generous conversation and to everyone who came along to ask such thoughtful questions. Particular thanks to Debbie Bogard, Noni Csogor, Emma Fielding and Beth Kandemir for their instrumental work getting the Network off the ground.
+
+The Sixth Form Research Network is a partnership co-founded by Sixth Form Colleges Association, Kingston Grammar School, Richard Huish College and Capital City College.
+
+Our [call for papers](/call-for-papers/) for the Sixth Form Research Network Journal is open.
+
+Details of the next webinar, coming up early in 2027, will be available soon.
 
 Follow us on [LinkedIn](https://www.linkedin.com/company/sixthformresearchnetwork) for news of the next webinar and other opportunities to get involved.`,
   },
