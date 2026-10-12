@@ -37,7 +37,7 @@ export const news: NewsPost[] = [
       height: 720,
       pullQuote: '“I talk about our research like planting a tree.”',
       caption:
-        'Professor Sabine Little on how a research project earns its place. Fifty-three seconds from our introductory webinar.',
+        'Professor Sabine Little at our introductory webinar, Wednesday 23rd September 2026.',
       transcript: `So what I think really matters when I teach research at our university, I talk about our research like planting a tree. A tree sits within a landscape. You’ve got all the other trees there, and that is research from other authors, and they might have done something that’s really closely related, so your tree might be really close. Or it might be something with just a sort of underlying similar outlook, in which case you might just about be able to see the tree. But when you plant it, the roots go into all of that previous knowledge. That’s why I think reading other research is so important, because it means that when you plant your tree, when you plan your research, you are able to articulate why that tree, that research project, has to be in exactly that place, asking exactly the questions that you’re asking.`,
     },
     content: `On Wednesday 23rd September 2026, we welcomed students, teachers and researchers from across the country to the Sixth Form Research Network’s introductory webinar. Professor Sabine Little, Professor of Literacy and Multilingualism at the University of Sheffield, joined us to talk about what it takes to develop as a young researcher: the ethics of research, why not all research experience is good experience and what publishing realistically looks like for a Sixth Form student today.
